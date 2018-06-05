@@ -25,8 +25,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		textureAtlas = new TextureAtlas(Gdx.files.internal("megaSprites/megaAtlas.atlas"));
-		textureRegion = textureAtlas.findRegion("tile1");
+		textureAtlas = new TextureAtlas(Gdx.files.internal("megSprites/megAtlas.atlas"));
+		textureRegion = textureAtlas.findRegion("tile000");
+		stillAnimation = new Animation(1/10f,textureAtlas.getRegions());
 		sprite = new Sprite(textureRegion);
 		sprite.setPosition(Gdx.graphics.getWidth()/2-sprite.getWidth(),Gdx.graphics.getHeight()/2-sprite.getHeight());
 	}
