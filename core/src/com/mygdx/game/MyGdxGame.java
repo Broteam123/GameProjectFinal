@@ -25,7 +25,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		textureAtlas = new TextureAtlas(Gdx.files.internal("megSprites/megAtlas.atlas"));
+		textureAtlas = new TextureAtlas(Gdx.files.internal("theMegaManSprites/megaAtlas.atlas"));
 		textureRegion = textureAtlas.findRegion("tile000");
 		stillAnimation = new Animation(1/10f,textureAtlas.getRegions());
 		sprite = new Sprite(textureRegion);
@@ -34,12 +34,12 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	@Override
 	public void render () {
-		Gdx.gl.glClearColor(Color.BLACK.r, Color.BLACK.g, Color.BLACK.b, Color.BLACK.a);
+		Gdx.gl.glClearColor(Color.WHITE.r, Color.WHITE.g, Color.WHITE.b, Color.WHITE.a);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 
 		timeForStill += Gdx.graphics.getDeltaTime();
-		batch.draw(stillAnimation.getKeyFrame(timeForStill,true),0,0);
+		batch.draw(stillAnimation.getKeyFrame(timeForStill,true),0,300);
 		batch.end();
 	}
 	
